@@ -1,0 +1,57 @@
+For my attacking machine here is how I set up everything:
+
+ 1. Download Kali Linux (Virtual Image)
+
+at: https://www.kali.org/get-kali/#kali-virtual-machines
+
+Download the Kali Linux VirtualBox (64-bit) .7z archive
+
+2. Extract the Archive
+
+- locate the folder in a place you remeber (you will probably have to make some modifications)
+- Use the built in extraction tools to get the contents of the zip file
+- You’ll get .vbox and .vdi files
+- these are ready for VirtualBox (no need for anything right now)
+
+3. Import Kali image into VirtualBox
+
+- Open VirtualBox
+- Go to ADD
+- Select the .vbox file from the downloaded folder to import the machine
+
+4. Configure VM Settings (this step is optional but recommended)
+
+- RAM: At least 2–4 GB
+- CPU: 2 or more if possible
+- Video Memory: 128 MB
+- Network: NAT or Bridged (for external connections)
+
+5. Start the VM
+
+- Username: kali
+- Password: kali
+
+- First thing we want to do as soon as we get access is change the default credentials
+- passwd kali (to change passwords for default account)
+
+- We also want to change the root default password much like before:
+- passwd root
+
+6. Update the System (Shouldn't matter too much right now, but will in the future)
+
+- sudo apt update
+
+7. Install other tools and wordlists
+
+- Kali offers a very large diverse suite of tools, so experiment and find what you like
+- this part is mostly subjective to what you decide to use the machine for 
+- I decided to get seclists which is a very large collection of lists for different use cases
+- sudo apt install seclists
+
+8. Play Around with VirtualBox Settings:
+
+- There are many settings available for each VM and there are multiple settings worth checking out
+- I for one had to change my Hosts key as I don't have a right ctrl key
+- adjusting window sizes, playing with different shortcuts and many others
+
+That should be it, and now you have a fully functioning virtualized attacker machine, use with caution!
