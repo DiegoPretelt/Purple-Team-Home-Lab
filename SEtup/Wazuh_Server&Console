@@ -1,1 +1,28 @@
-to be continued...
+I chose to use an AWS EC2 instance to host my Wazuh Server:
+
+- I did this EC2 deployment using the free tier offered by AWS
+- the OS is ubuntu server
+- instance type t3.micro (Intended use as home lab)
+- locally stored key pair for SSH into instance
+
+- NETWORK settings:
+  - only allowing SSH traffic from my IP (not recommended to allow port 22 access from everywhere)
+  - port 443 also gets enabled for HTTPS traffic 
+  - also added some special rules for the Wazuh agents to be able to be deployed and communicate with the server
+
+Port	Protocol	Purpose
+22	  TCP	      SSH access to manage the server
+443	  TCP	      Wazuh dashboard (HTTPS UI)
+1514	TCP/UDP	  Agent to Manager log forwarding
+55000	TCP	      Agent enrollment/registration
+
+- STORAGE CONFIGURATION:
+  - reccommended at least 20 GiBs of gp3 storage to be able to run Wazuh Server
+  - At the time of writing anything under 30 still qualifies under the free tier
+  - rest of the advanced settings were left as default
+
+- This instance is now ready to be deployed
+
+- COMMANDS TO RUN AND DOWNLOAD WAZUH SERVER:
+curl -sO https://packages.wazuh.com/4.8/wazuh-install.sh
+sudo bash wazuh-install.sh -a -i
