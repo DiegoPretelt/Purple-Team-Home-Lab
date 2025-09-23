@@ -1,0 +1,9 @@
+Hardware & Setup
+
+Device: Raspberry Pi 5 (8GB)
+
+OS: Raspberry Pi OS 64-bit (headless)
+
+Containerization: Docker + Docker Compose
+
+Network role: Runs DNS sinkhole (Pi-hole) + SSH/Telnet honeypot (Cowrie) + More soon...
