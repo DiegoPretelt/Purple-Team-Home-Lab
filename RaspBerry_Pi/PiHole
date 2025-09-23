@@ -13,3 +13,26 @@ Learning outcome:
   Practiced monitoring DNS queries to identify suspicious traffic patterns.
 
   Also who doesn't enjoy having no adds
+
+### Follow along:
+
+If this is the first time booting up the raspberry pi, be sure to update it to the latest software.
+
+- Install Docker and compose:
+
+```bash
+curl -sSL https://get.docker.com | sh
+sudo usermod -aG docker <your-username>
+sudo apt install -y docker-compose-plugin
+'''
+
+- Create a directory to house pihole files and create the yml file:
+
+'''bash 
+mkdir ~/pihole && cd ~/pihole
+nano docker-compose.yml
+'''
+
+after this PiHole is ready to be spun up and you should be able to access your admin dashboard, making adjustments as neccesary.
+For testing purposes you should first test this with a singular device before re-directing all network traffic through it.
+Also fair warning make sure you have a backup dns server address if you plan on shutting down the pihole.
