@@ -1,1 +1,15 @@
+Purpose: Harden the home lab network by filtering DNS traffic.
 
+  Deployed in Docker using docker-compose.yml.
+
+  Blocks ad/tracker domains network-wide, improving speed & reducing telemetry noise.
+
+  Provides visibility into outbound DNS queries from IoT devices & VMs.
+
+Learning outcome:
+
+  Configured and tuned blocklists to balance usability vs. protection.
+
+  Practiced monitoring DNS queries to identify suspicious traffic patterns.
+
+  Also who doesn't enjoy having no adds
