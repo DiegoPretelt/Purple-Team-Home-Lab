@@ -1,0 +1,10 @@
+## Purpose
+This repository contains educational C programs demonstrating classic memory safety vulnerabilities,
+including buffer overflows and control-flow hijacking, implemented in controlled lab environments.
+
+The goal is to understand how these vulnerabilities work in order to design and validate defensive
+controls such as stack canaries, ASLR, and safe coding practices.
+
+## Disclaimer
+All code in this repository is intended for educational use only and was developed and tested in
+isolated lab environments. It should not be used against systems without explicit authorization.
