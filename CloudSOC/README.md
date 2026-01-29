@@ -46,8 +46,8 @@ Each detection includes a SOC-style playbook outlining:
 - Containment actions
 
 Example playbooks:
-- IAM Privilege Playbook
-- IAM Enumeration Playbook
+- [IAM Privilege Playbook](Playbooks/iam-privilege-escalation-attempt-playbook.md)
+
 
 ## Future Improvements
 
