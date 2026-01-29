@@ -1,4 +1,3 @@
-# pending
 # Root User Activity Playbook
 
 ## 1. Alert Overview
@@ -27,22 +26,24 @@ fields @timestamp, eventName, errorCode, userIdentity.userName, sourceIPAddress,
 
 Possible benign causes:
 - scheduled usage
+- Accidental login by trusted user
 
 Validate:
 - confirm unscheduled usage
-- Review Actions taken
 - Check any correlating alerts
+- Review Actions taken
 
 ## 6. Containment Actions
-- Restrict IAM permissions temporarily
-- Disable keys if external IP
-- Force password reset if suspected compromise
+- Change Root Password
+- Delete any Associated Keys
+- Rotate/enable MFA
+- Revoke any changes made by checking CloudTrail logs
 
 ## 7. Eradication & Recovery
-- Rotate credentials
-- Review IAM for least privilege
+- Secure root email
+- Use IAM roles for management purposes
 - Force password reset if suspected compromise
 
 ## 8. Post-Incident Improvements
-- Correlate with IAM enumeration alerts
-- Tune threshold based on environment baseline
+- use two person rule, no one has root password and mfa at one time
+- Set up SNS notifications if not on for alarms
