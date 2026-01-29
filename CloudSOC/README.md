@@ -35,7 +35,7 @@ A centralized CloudWatch dashboard provides visibility into:
 The dashboard enables rapid triage and situational awareness for SOC analysts.
 
 ## SOC Dashboard Picture
-Coming Soon!
+![Cloud Dashboard](Evidence/Screenshots/CloudSocDashboard.png)
 
 ## Incident Response Playbooks
 
