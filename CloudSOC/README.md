@@ -11,7 +11,7 @@ This project implements a cloud-native Security Operations Center (SOC) detectio
  IAM users are created using the least privilege principle, this allows for the simulation and validation of attacker behavior.
 
  ## Architecture Diagram 
- ![Cloud SOC Architecture](Architecture/CloudSOC-Architecture.png)
+ ![Cloud SOC Architecture]()
 
  ## Implemented Detections
 
