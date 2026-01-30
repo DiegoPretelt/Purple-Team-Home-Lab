@@ -2,7 +2,7 @@
 
 ## 1. Alert Overview
 - **Severity:** Critical
-- **Category:** Exploitation
+- **Category:** Identity Abuse / Privileged Account Misuse
 - **Data Source:** AWS CloudTrail
 - **Trigger Condition:** Root account usage has been detected
 
@@ -19,31 +19,34 @@ Root account usage could indicate the highest level of compromise and potential 
 ### Review the triggering event
 ```sql
 fields @timestamp, eventName, errorCode, userIdentity.userName, sourceIPAddress, userAgent
-| filter eventName="identityType = Root"
+| filter userIdentity.type = "Root"
 | sort @timestamp desc
 ```
 ## 5. False Positive Analysis
 
 Possible benign causes:
 - scheduled usage
-- Accidental login by trusted user
+- Emergency procedures
 
 Validate:
-- confirm unscheduled usage
-- Check any correlating alerts
-- Review Actions taken
+- Confirm approval or change record
+- Verify activity occurred within the approved window
+- Ensure no unexpected follow-on actions occurred
 
 ## 6. Containment Actions
 - Change Root Password
-- Delete any Associated Keys
+- Delete any root access keys
 - Rotate/enable MFA
 - Revoke any changes made by checking CloudTrail logs
+- Restrict related IAM users if compromise is suspected
 
 ## 7. Eradication & Recovery
 - Secure root email
+- Review and revert any changes
 - Use IAM roles for management purposes
+- Ensure logging is on
 - Force password reset if suspected compromise
 
 ## 8. Post-Incident Improvements
 - use two person rule, no one has root password and mfa at one time
-- Set up SNS notifications if not on for alarms
+- Set up SNS notifications if not on for alerts
