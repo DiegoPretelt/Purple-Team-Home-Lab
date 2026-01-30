@@ -47,6 +47,7 @@ Each detection includes a SOC-style playbook outlining:
 
 Example playbooks:
 - [IAM Privilege Playbook](Playbooks/iam-privilege-escalation-attempt-playbook.md)
+- [Root Usage Playbook](Playbooks/root-usage-playbook.md)
 
 
 ## Future Improvements
